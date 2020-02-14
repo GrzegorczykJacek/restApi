@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filter>
+    <filter-name>HitCounterFilter</filter-name>
+    <filter-class>HitCounterFilter</filter-class>
+</filter>
+<filter-mapping>
+<filter-name>HitCounterFilter</filter-name>
+<url-pattern>/product/1</url-pattern>
+</filter-mapping>
