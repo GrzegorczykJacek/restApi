@@ -6,6 +6,14 @@ CREATE TABLE IF NOT EXISTS product (
     type varchar(1)
 );
 
+CREATE TABLE IF NOT EXISTS discounts (
+                                       id int,
+                                       name varchar(25),
+                                       description varchar(256),
+                                       discount float,
+                                       type varchar(1)
+);
+
 INSERT INTO product (
                      id,
                      name,

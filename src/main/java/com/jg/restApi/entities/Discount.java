@@ -8,20 +8,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
-@Entity(name = "product")
-public class Product {
+@Entity(name = "discounts")
+public class Discount {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String description;
-    private float price;
-    private int view;
-
-    public void getDiscount(){
-        this.price = price * 0.5f;
-    }
-
+    private float discount;
+    private String type;
 
 }
