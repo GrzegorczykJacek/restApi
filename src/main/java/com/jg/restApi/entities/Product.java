@@ -1,6 +1,8 @@
 package com.jg.restApi.entities;
 
+import com.jg.restApi.repositories.DiscountRepository;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,9 +20,10 @@ public class Product {
     private String description;
     private float price;
     private int view;
+    private String type;
 
-    public void getDiscount(){
-        this.price = price * 0.5f;
+    public void getDiscount(float discount){
+        this.price = price - (price * discount);
     }
 
 

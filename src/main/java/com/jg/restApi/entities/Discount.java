@@ -12,11 +12,10 @@ import javax.persistence.Id;
 public class Discount {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String type;
     private String name;
     private String description;
     private float discount;
-    private String type;
+
 
 }
