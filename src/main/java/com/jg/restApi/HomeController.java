@@ -56,6 +56,7 @@ public class HomeController {
     public ObjectNode productJSON(
             @RequestParam(defaultValue = "1") Long id
     ) {
+        try {
             Product product = productRepository.getOne(id);
             Discount discount = discountRepository.getOne(product.getType());
             product.setView(product.getView() + 1);
@@ -64,10 +65,14 @@ public class HomeController {
             product.getDiscount(discount.getDiscount());
             float discountPrice = product.getPrice();
             ObjectNode objectNode = mapper.createObjectNode();
-            objectNode.put("regularPrice",regularPrice);
-            objectNode.put("discountPrice",discountPrice);
-            objectNode.put("productViews",product.getView());
+            objectNode.put("regularPrice", regularPrice);
+            objectNode.put("discountPrice", discountPrice);
+            objectNode.put("productViews", product.getView());
             return objectNode;
+        } catch (Exception e){
+            e.printStackTrace();
+            return mapper.createObjectNode();
+        }
     }
 
     @RequestMapping(value = "/")
